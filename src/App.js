@@ -6,13 +6,18 @@ import Carts from "./Home/Carts"
 
 function App() {
   return (
-    <>
-      <Header />
+    <div className="App_container">
+      <div className="App_header">
+        <Header />
+      </div>
+      <div className="App_remain">
+
       <Routes>
         <Route path="/" Component={Homepage} />
         <Route path="/cart" Component={Carts} />
       </Routes>
-    </>
+      </div>
+    </div>
   );
 }
 

@@ -3,6 +3,7 @@
   height: 50px;
   background-color: #00b38363;
   border-bottom: 1px solid #ccc;
+  position: fixed;
 }
 
 .header_other {
@@ -22,6 +23,10 @@
 
 .header_cartButton {
   width: 100px;
+}
+.header_cartButton button span {
+  color: rgb(253, 253, 253);
+  margin-left: 0.3rem;
 }
 
 .header_cartButton button {

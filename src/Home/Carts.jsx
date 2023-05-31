@@ -8,7 +8,7 @@ function Carts() {
     state: { cart },dispatch
   } = useContext(Cart);
   console.log("here is cart page");
-  console.log(cart);
+  console.log(cart.length);
   return (
     <div className="Carts_mainContainer">
       <div>

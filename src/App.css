@@ -1,7 +1,15 @@
+.App_container{
+  display: flex;
+  flex-direction: column;
+
+}
+.App_remain{
+  margin-top: 3rem;
+}
 .Header_container {
   width: 100%;
   height: 50px;
-  background-color: #00b38363;
+  background-color: #00000063;
   border-bottom: 1px solid #ccc;
 }
 
@@ -126,9 +134,6 @@
   width: 13rem;
   height: 10rem;
   transform: scale(1.1);
-}
-.Single_productpage_Container{
-
 }
 .Single_productpage_data1{
   display: flex;

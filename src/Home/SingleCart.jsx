@@ -27,17 +27,30 @@ function SingleCart({ prod }) {
           </p>
         </div>
         <div className="Single_productpage_button">
-          <button
-            onClick={() =>
-              dispatch({
-                type: "ADD_TO_CART",
-                payload: prod,
-              })
-            }
-          >
-            Add to Cart
-          </button>
-          <button>Remove to Cart</button>
+          {cart.some((p) => p._id === prod._id) ? (
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "REMOVE_FROM_CART",
+                  payload: prod,
+                })
+              }
+            >
+              Remove to Cart
+            </button>
+          ) : (
+            <button
+              onClick={() =>
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: prod,
+                })
+              }
+              disabled={!prod.inStock}
+            >
+              {!prod.inStock ? "Out of Stock" : "Add to Cart"}
+            </button>
+          )}
         </div>
       </div>
     </>
