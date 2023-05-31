@@ -13,7 +13,7 @@ function Carts() {
     <div className="Carts_mainContainer">
       <div>
         {cart.map((prod) => (
-          <div className="Carts_Container" key={prod._id}>
+          <div  className="Carts_Container" key={prod._id}>
             <div className="Carts_images">
               <img src={prod.image} alt={prod._id} />
             </div>
@@ -36,7 +36,7 @@ function Carts() {
               <button
                 onClick={() =>
                   dispatch({
-                    type: "ADD_TO_CART",
+                    type: "REMOVE_FROM_CART",
                     payload: prod,
                   })
                 }
@@ -49,7 +49,7 @@ function Carts() {
       </div>
       <div className="CartsRight_container">
         <div className="CartsRight_container_inner">
-          <h2>Here you can see yout total price </h2>
+          <h2>Here you can see your total price </h2>
         </div>
       </div>
     </div>

@@ -14,17 +14,20 @@ export const products = Data.map((chat) => ({
 }));
 const reducer = (state, action) => {
     switch (action.type) {
-    case "ADD_TO_CART":
-      return { ...state, cart: [...state.cart, { ...action.payload, qty: 1 }] };
-    // case "REMOVE_FROM_CART":
-    //   return {
-    //     ...state,
-    //     cart: state.cart.filter((c) => c.id !== action.payload.id),
-    //   };
-    default:{
-      console.log("chal lawde");
-    }
-  };
+      case "ADD_TO_CART":
+        return {
+          ...state,
+          cart: [...state.cart, { ...action.payload, qty: 1 }],
+        };
+      case "REMOVE_FROM_CART":
+        return {
+          ...state,
+          cart: state.cart.filter((prod) => prod._id !== action.payload._id),
+        };
+      default: {
+        console.log("chal lawde");
+      }
+    };
 }
 
 function Context({ children }) {
