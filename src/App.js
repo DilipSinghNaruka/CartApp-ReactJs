@@ -2,6 +2,7 @@ import "./App.css";
 import Homepage from "./Home/Homepage";
 import Header from "./components/Header";
 import { Routes, Route } from "react-router-dom";
+import Carts from "./Home/Carts" 
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" Component={Homepage} />
-        {/* <Route path="/cart" Component={Cart} /> */}
+        <Route path="/cart" Component={Carts} />
       </Routes>
     </>
   );

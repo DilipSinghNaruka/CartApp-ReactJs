@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Cart } from "../context/Context";
 
 function SingleCart({ prod }) {
-  const { state,dispatch } = useContext(Cart);
+  const { state:{cart},dispatch } = useContext(Cart);
+  console.log(cart);
   return (
     <>
       <div className="Single_productpage_Container" key={prod._id}>
@@ -14,12 +15,28 @@ function SingleCart({ prod }) {
           <p>Price: {prod.price}</p>
         </div>
         <div className="Single_productpage_data2">
-          <p><b>In Stock: </b>{prod.inStock}</p>
-          <p><b>FastDelivery:</b> {prod.fastDelivery}</p>
-          <p><b>Rating:</b> {prod.rating}</p>
+          <p>
+            <b>In Stock: </b>
+            {prod.inStock}
+          </p>
+          <p>
+            <b>FastDelivery:</b> {prod.fastDelivery}
+          </p>
+          <p>
+            <b>Rating:</b> {prod.rating}
+          </p>
         </div>
         <div className="Single_productpage_button">
-          <button>Add to Cart</button>
+          <button
+            onClick={() =>
+              dispatch({
+                type: "ADD_TO_CART",
+                payload: prod,
+              })
+            }
+          >
+            Add to Cart
+          </button>
           <button>Remove to Cart</button>
         </div>
       </div>

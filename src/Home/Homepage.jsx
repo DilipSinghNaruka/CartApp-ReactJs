@@ -6,7 +6,7 @@ import { Cart } from "../context/Context";
 
 function Homepage() {
 const {state :{products}}  = useContext(Cart);
-console.log(products);
+// console.log(products);
   return (
     <div className="Homepage_container">
       <div className="Homepage_filter">
