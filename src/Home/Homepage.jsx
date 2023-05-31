@@ -5,7 +5,8 @@ import SingleCart from "./SingleCart";
 import { Cart } from "../context/Context";
 
 function Homepage() {
-  const products = useContext(Cart);
+const {state :{products}}  = useContext(Cart);
+console.log(products);
   return (
     <div className="Homepage_container">
       <div className="Homepage_filter">
